@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  padding: 56px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 
+
+NAV 
+
+*/
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.nav__logo--text {
+  font-size: 64px;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 16px;
+  cursor: no-drop;
+}
+
+/* 
+
+HEADER 
+
+*/
+
+header {
+  background-image: url("https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg");
+  background-size: cover;
+  height: 456px;
+  display: flex;
+  flex-direction: column;
+  padding: 56px;
+  color: #fff;
+}
+
+.search__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search__heading {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  max-width: 800px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 20px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.btn {
+  background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+  background-color: #f24537;
+  border-radius: 8px;
+  border: 1px solid #d02718;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+/* 
+
+MAIN 
+
+*/
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: calc(100% / 4);
+  padding: 24px;
+}
+
+.movie__img {
+  height: 380px;
+  transition: all 300ms ease;
+  cursor: no-drop;
+  width: 100%;
+}
+
+.movie__img--container {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.24);
+}
+
+.movie:hover .movie__img {
+  transform: scale(1.03);
+}
+
+.movie__title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.movie__year {
+  margin-bottom: 8px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  
+
+SPINNER
+
+*/
+
+.fa-spinner {
+  animation: rotate 700ms infinite linear;
+}
+
+.movies__loading--spinner {
+  display: none !important;
+}
+
+.movies__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 48px 0;
+}
+
+.movies__loading .movies__loading--spinner {
+  display: block !important;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+/* TABLETS */
+
+@media (max-width: 992px) {
+  .movie {
+    width: calc(100% / 3);
+    padding: 16px;
+  }
+
+  .nav__logo--text {
+    font-size: 40px;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  header {
+    padding: 32px;
+  }
+}
+
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+
+@media (max-width: 768px) {
+  a {
+    font-size: 20px;
+  }
+
+  .search__heading {
+    font-size: 36px;
+  }
+
+  input {
+    max-width: 600px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+  }
+}
+
+/* SMALL PHONES, LARGE SMARTPHONES (SOME) */
+
+@media (max-width: 576px) {
+  header {
+    padding: 24px;
+  }
+
+  .nav__logo--text {
+    margin: 0 auto;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .container {
+    padding: 24px 0;
+  }
+
+  .search__results {
+    font-size: 20px;
+  }
+
+  .main {
+    padding: 8px;
+  }
+
+  .movie {
+    width: calc(100% / 2);
+    padding: 8px;
+  }
+}
